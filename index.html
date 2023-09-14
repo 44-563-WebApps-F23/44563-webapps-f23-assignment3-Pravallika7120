@@ -73,17 +73,22 @@
         </table>
         <hr>
         <h2>Code Display</h2>
+        <blockquote>
+
+            <a href="https://css-tricks.com/snippets/javascript/get-object-size/">link for stock overflow code file to open</a>
+      
+          </blockquote>
         <pre>
-            var Fb = {}; //An empty object literal for holding the function
-            Fb.log = function(obj, consoleMethod) {
-                   if (window.console && window.console.firebug && window.console.firebug.replace(/^\s\s*/, '').replace(/\s\s*$/, '') !== '') {
-                           if (typeof consoleMethod === "string" && typeof console[consoleMethod] === "function") {
-                                   console[consoleMethod](obj);
-                           } else {
-                                   console.log(obj);
-                           }
-                   }
-            }
+            function objectSize(the_object) {
+                /* function to validate the existence of each key in the object to get the number of valid keys. */
+                var object_size = 0;
+                for (key in the_object){
+                  if (the_object.hasOwnProperty(key)) {
+                    object_size++;
+                  }
+                }
+                return object_size;
+              }
         </pre>
        
 
